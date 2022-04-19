@@ -53,10 +53,11 @@ namespace MontanoP8
         }
         private void DisplayCardQuestion(int k)
         {
+            Card card = cards[k];
             int id = k + 1;
-            tbxCardID.Text = id.ToString();
-            tbxCardTitle.Text = cards[k].ToString();
-            //tbxQuestion.Text = cards[2].ToString();
+            tbxCardID.Text = card.CardID.ToString();
+            tbxCardTitle.Text = card.Title;
+            tbxQuestion.Text = card.Question;
             tbxThink.Text = "Think about the answer and click Show Answer";
         }
     }
