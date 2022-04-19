@@ -1,0 +1,58 @@
+﻿<Window x:Class="MontanoP8.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MontanoP8"
+        mc:Ignorable="d"
+        Title="Flash Card App" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Flash Cards">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="11*"/>
+                        <ColumnDefinition Width="386*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="tbxCardTitle" HorizontalAlignment="Left" Margin="94,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="410" RenderTransformOrigin="0.3,0.646" Grid.Column="1"/>
+                    <Label Content="Question:" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.358,0.077" Grid.Column="1"/>
+                    <TextBox x:Name="tbxQuestion" HorizontalAlignment="Left" Margin="2,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="529" RenderTransformOrigin="-0.274,-0.356" Height="70" Grid.Column="1"/>
+                    <Label Content="Answer:" HorizontalAlignment="Left" Margin="5,246,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.358,0.077" Grid.Column="1"/>
+                    <TextBox x:Name="tbxAnswer" HorizontalAlignment="Left" Margin="0,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="529" RenderTransformOrigin="-0.274,-0.356" Height="79" Grid.Column="1"/>
+                    <Label Content="Did you get it right?" HorizontalAlignment="Left" Margin="581,67,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Grid.Column="1"/>
+                    <Button x:Name="btnShowAnswer" Content="ShowAnswer" HorizontalAlignment="Left" Margin="204,203,0,0" VerticalAlignment="Top" Height="36" Width="124" RenderTransformOrigin="-0.173,0.402" Grid.Column="1"/>
+                    <Button x:Name="btnRight" Content="Right" HorizontalAlignment="Left" Margin="625,144,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.809,0.06" Width="56" Background="#FF9D9FFF" Height="28" Grid.Column="1"/>
+                    <Button x:Name="btnWrong" Content="Wrong" HorizontalAlignment="Left" Margin="625,206,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.221,-0.844" Background="#FFBF4E4E" Width="56" Height="28" Grid.Column="1"/>
+                    <TextBox x:Name="tbxCardID" HorizontalAlignment="Left" Margin="10,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" TextAlignment="Center" Grid.Column="1"/>
+                    <TextBox x:Name="tbxThink" HorizontalAlignment="Left" Margin="191,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304" Height="34" RenderTransformOrigin="0.167,0.411" Grid.Column="1"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Manage Cards">
+                <Grid Background="#FFE5E5E5">
+                    <ListBox x:Name="lbCardlist" Margin="533,37,38,78" RenderTransformOrigin="0.501,0.51" SelectionChanged="lbCardlist_MouseDoubleClick"/>
+                    <Label Content=" Title" HorizontalAlignment="Left" Margin="69,67,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Question:" HorizontalAlignment="Left" Margin="69,131,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.66,2.742"/>
+                    <Label Content="Answer:" HorizontalAlignment="Left" Margin="69,233,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.561,6.191"/>
+                    <TextBox x:Name="tbxManageTitle" HorizontalAlignment="Left" Margin="69,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="tbxManageQuestion" HorizontalAlignment="Left" Margin="69,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276" Height="68"/>
+                    <TextBox x:Name="tbxManageAnswer" HorizontalAlignment="Left" Margin="69,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276" Height="68"/>
+                    <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="397,116,0,0" VerticalAlignment="Top" Width="71"/>
+                    <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="397,165,0,0" VerticalAlignment="Top" Width="71" RenderTransformOrigin="0.577,3.329"/>
+                    <Button x:Name="btnRemove" Content="Remove" HorizontalAlignment="Left" Margin="397,218,0,0" VerticalAlignment="Top" Width="71"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+
+
+
+
+
+
+
+
+
+
+
+    </Grid>
+</Window>
