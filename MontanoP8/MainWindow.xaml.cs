@@ -54,7 +54,6 @@ namespace MontanoP8
         private void DisplayCardQuestion(int k)
         {
             Card card = cards[k];
-            int id = k + 1;
             tbxCardID.Text = card.CardID.ToString();
             tbxCardTitle.Text = card.Title;
             tbxQuestion.Text = card.Question;
