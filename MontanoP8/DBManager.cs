@@ -31,7 +31,7 @@ namespace MontanoP8
                     card.Question = dr.IsDBNull(2) ? null : dr.GetString(2);
                     card.Answer = dr.IsDBNull(3) ? null : dr.GetString(3);
                     card.NumRight = dr.GetInt32(4);
-                    card.NumWrong = int.Parse(dr.GetString(5));
+                    card.NumWrong = dr.GetInt32(5);
                     cards.Add(card);
                 }
 
@@ -50,7 +50,8 @@ namespace MontanoP8
                 cmd.Parameters.AddWithValue("Title",card.Title);
                 cmd.Parameters.AddWithValue("Question",card.Question);
                 cmd.Parameters.AddWithValue("Answer", card.Answer);
-                cmd.Parameters.AddWithValue("NumRight",card.NumRight);
+                cmd.Parameters.AddWithValue("NumRight", card.NumRight);
+                
                 cmd.Parameters.AddWithValue("NumWrong", card.NumWrong);
                 conn.Open();
                 cmd.ExecuteNonQuery();
@@ -63,8 +64,8 @@ namespace MontanoP8
             string connStr = ConfigurationManager.ConnectionStrings["MontanoP8"].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connStr))
             {
-                SqlCommand cmd = new SqlCommand("DELETE FROM Card WHERE CardID = @CardID",conn);
-                cmd.Parameters.AddWithValue("CardID", id);
+                SqlCommand cmd = new SqlCommand("DELETE FROM Card WHERE Id = @Id",conn);
+                cmd.Parameters.AddWithValue("Id", id);
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }
@@ -76,7 +77,16 @@ namespace MontanoP8
             using (SqlConnection conn = new SqlConnection(connStr))
             {
                 SqlCommand cmd = new SqlCommand("UPDATE Card SET Title = @Title, Question = @Question, Answer = @Answer," +
-                    "NumRight = @NumRight, NumWrong = @NumWrong WHERE CardID = @CardID;", conn);
+                    "NumRight = @NumRight, NumWrong = @NumWrong WHERE Id = @Id;", conn);
+                cmd.Parameters.AddWithValue("Title", card.Title);
+                cmd.Parameters.AddWithValue("Question", card.Question);
+                cmd.Parameters.AddWithValue("Answer", card.Answer);
+                cmd.Parameters.AddWithValue("NumRight", card.NumRight);
+                cmd.Parameters.AddWithValue("NumWrong", card.NumWrong);
+                cmd.Parameters.AddWithValue("Id", card.CardID);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+
             }
         }
     }

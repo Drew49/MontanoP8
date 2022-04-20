@@ -11,34 +11,37 @@
             <TabItem Header="Flash Cards">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="11*"/>
-                        <ColumnDefinition Width="386*"/>
+                        <ColumnDefinition Width="22*"/>
+                        <ColumnDefinition Width="105*"/>
+                        <ColumnDefinition Width="667*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBox x:Name="tbxCardTitle" HorizontalAlignment="Left" Margin="94,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="410" RenderTransformOrigin="0.3,0.646" Grid.Column="1"/>
+                    <TextBox x:Name="tbxCardTitle" HorizontalAlignment="Left" Margin="94,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="410" RenderTransformOrigin="0.3,0.646" Grid.Column="1" Grid.ColumnSpan="2"/>
                     <Label Content="Question:" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.358,0.077" Grid.Column="1"/>
-                    <TextBox x:Name="tbxQuestion" HorizontalAlignment="Left" Margin="2,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="529" RenderTransformOrigin="-0.274,-0.356" Height="70" Grid.Column="1"/>
+                    <TextBox x:Name="tbxQuestion" HorizontalAlignment="Left" Margin="2,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="529" RenderTransformOrigin="-0.274,-0.356" Height="70" Grid.Column="1" Grid.ColumnSpan="2"/>
                     <Label Content="Answer:" HorizontalAlignment="Left" Margin="5,246,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.358,0.077" Grid.Column="1"/>
-                    <TextBox x:Name="tbxAnswer" HorizontalAlignment="Left" Margin="0,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="529" RenderTransformOrigin="-0.274,-0.356" Height="79" Grid.Column="1"/>
-                    <Label Content="Did you get it right?" HorizontalAlignment="Left" Margin="581,67,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Grid.Column="1"/>
-                    <Button x:Name="btnShowAnswer" Content="ShowAnswer" HorizontalAlignment="Left" Margin="204,203,0,0" VerticalAlignment="Top" Height="36" Width="124" RenderTransformOrigin="-0.173,0.402" Grid.Column="1"/>
-                    <Button x:Name="btnRight" Content="Right" HorizontalAlignment="Left" Margin="625,144,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.809,0.06" Width="56" Background="#FF9D9FFF" Height="28" Grid.Column="1"/>
-                    <Button x:Name="btnWrong" Content="Wrong" HorizontalAlignment="Left" Margin="625,206,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.221,-0.844" Background="#FFBF4E4E" Width="56" Height="28" Grid.Column="1"/>
+                    <TextBox x:Name="tbxAnswer" HorizontalAlignment="Left" Margin="0,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="529" RenderTransformOrigin="-0.274,-0.356" Height="79" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <Label Content="Did you get it right?" HorizontalAlignment="Left" Margin="476,67,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Grid.Column="2"/>
+                    <Button x:Name="btnShowAnswer" Content="ShowAnswer" HorizontalAlignment="Left" Margin="97,197,0,0" VerticalAlignment="Top" Height="36" Width="124" RenderTransformOrigin="-0.173,0.402" Grid.Column="2" Click="btnShowAnswer_Click"/>
+                    <Button x:Name="btnRight" Content="Right" HorizontalAlignment="Left" Margin="520,144,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.809,0.06" Width="56" Background="#FF9D9FFF" Height="28" Grid.Column="2" Click="btnRight_Click"/>
+                    <Button x:Name="btnWrong" Content="Wrong" HorizontalAlignment="Left" Margin="520,206,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.221,-0.844" Background="#FFBF4E4E" Width="56" Height="28" Grid.Column="2" Click="btnWrong_Click"/>
                     <TextBox x:Name="tbxCardID" HorizontalAlignment="Left" Margin="10,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" TextAlignment="Center" Grid.Column="1"/>
-                    <TextBox x:Name="tbxThink" HorizontalAlignment="Left" Margin="191,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304" Height="34" RenderTransformOrigin="0.167,0.411" Grid.Column="1"/>
+                    <TextBox x:Name="tbxThink" HorizontalAlignment="Left" Margin="86,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304" Height="34" RenderTransformOrigin="0.167,0.411" Grid.Column="2"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Manage Cards">
                 <Grid Background="#FFE5E5E5">
-                    <ListBox x:Name="lbCardlist" Margin="533,37,38,78" RenderTransformOrigin="0.501,0.51" SelectionChanged="lbCardlist_MouseDoubleClick"/>
+                    <ListBox x:Name="lbCardlist" Margin="491,37,38,78" RenderTransformOrigin="0.501,0.51" MouseDoubleClick="lbCardlist_MouseDoubleClick"/>
                     <Label Content=" Title" HorizontalAlignment="Left" Margin="69,67,0,0" VerticalAlignment="Top"/>
                     <Label Content="Question:" HorizontalAlignment="Left" Margin="69,131,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.66,2.742"/>
                     <Label Content="Answer:" HorizontalAlignment="Left" Margin="69,233,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.561,6.191"/>
                     <TextBox x:Name="tbxManageTitle" HorizontalAlignment="Left" Margin="69,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
                     <TextBox x:Name="tbxManageQuestion" HorizontalAlignment="Left" Margin="69,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276" Height="68"/>
                     <TextBox x:Name="tbxManageAnswer" HorizontalAlignment="Left" Margin="69,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276" Height="68"/>
-                    <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="397,116,0,0" VerticalAlignment="Top" Width="71"/>
-                    <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="397,165,0,0" VerticalAlignment="Top" Width="71" RenderTransformOrigin="0.577,3.329"/>
-                    <Button x:Name="btnRemove" Content="Remove" HorizontalAlignment="Left" Margin="397,218,0,0" VerticalAlignment="Top" Width="71"/>
+                    <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="397,116,0,0" VerticalAlignment="Top" Width="71" Click="btnAdd_Click"/>
+                    <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="397,165,0,0" VerticalAlignment="Top" Width="71" RenderTransformOrigin="0.577,3.329" Click="btnUpdate_Click"/>
+                    <Button x:Name="btnRemove" Content="Remove" HorizontalAlignment="Left" Margin="397,218,0,0" VerticalAlignment="Top" Width="71" Click="btnRemove_Click"/>
+                    <TextBox x:Name="tbxManageID" HorizontalAlignment="Left" Margin="225,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.163,3.609"/>
+                    <Label x:Name="lblID" Content="ID" HorizontalAlignment="Left" Margin="307,67,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
         </TabControl>

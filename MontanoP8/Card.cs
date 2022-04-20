@@ -25,9 +25,9 @@ namespace MontanoP8
             get {return numWrong;}
             set {numWrong = value;Calc(); }
         }
-        public string? Question { get; set;}
+        public string Question { get; set;}
         public float RightWrongRatio { get; set; }
-        public string? Title { get; set; }
+        public string Title { get; set; }
         public Card()
         {
             this.Answer = Answer;
@@ -51,11 +51,14 @@ namespace MontanoP8
         public void Calc()
         {
             int total = numRight + numWrong;
-            //RightWrongRatio = numRight / total;
-            //if(total == 0)
-            //{
-              //  total = 1;
-            //}
+            if (numWrong == 0 && numRight == 0)
+            {
+                RightWrongRatio = 0;
+            }
+            else
+            {
+                RightWrongRatio = (float) (numRight / total);
+            }
         }
 
         public override string ToString()
